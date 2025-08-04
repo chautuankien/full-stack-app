@@ -2,7 +2,7 @@ from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 
-from mysql import init_db, get_user
+from database_models import init_db
 
 app = FastAPI()
 init_db()

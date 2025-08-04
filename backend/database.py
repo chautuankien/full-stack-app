@@ -1,17 +1,8 @@
-import mysql.connector
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker
 
-# Kết nối đến MySQL server (chưa cần chỉ định database)
-connection = mysql.connector.connect(
-    host="localhost",       # hoặc IP MySQL server
-    user="root",            # username của MySQL
-    password="your_password"  # thay bằng mật khẩu thật
-)
+DATABASE_URL = "postgresql://myuser:mypassword@localhost:5432/mydatabase"
 
-cursor = connection.cursor()
-
-# Tạo database mới
-cursor.execute("CREATE DATABASE mydatabase")
-
-# Đóng kết nối
-cursor.close()
-connection.close()
+# create engine and session 
+engine = create_engine(DATABASE_URL)
+session = sessionmaker(bind=engine, autocommit=False, autoflush=False)
