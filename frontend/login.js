@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const username = document.getElementById("email").value;
         const password = document.getElementById("password").value;
 
-        console.log("Username:", username);
+        console.log("Username123:", username);
         console.log("Password:", password);
 
         // Create the data object to send
